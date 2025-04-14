@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDT-2</title>
+    <link rel="stylesheet" href="idt.css">
+</head>
+
+<body>
+    <header>
+        <div id="header_container">
+            <nav class="header_nav_bar">
+                <a href="">
+                    <img src="hospitallogo.png" alt="our hospital logo" style="height: 75px; width: 75px;">
+                </a>
+                <div class="line">
+                    <a href="#">Home</a>
+                </div>
+                <div class="line">
+                    <a href="#">Contact</a>
+                </div>
+                <div class="line">
+                    <a href="#">About Us</a>
+                </div>
+                <div class="line">
+                    <a href="#">Services</a>
+                </div>
+            </nav>
+            <!-- <h1 style="font-size: 30px;margin-top: 10px;margin-right: 20px;">Integrated Hospital Navigation and Patient Info Portal</h1> -->
+            <div id="search_container">
+                <input type="search" id="search" placeholder="Search..."
+                    style="width: 200px; height: 32px;border-radius: 5px;padding-left: 10px;">
+                <button id="search_button" style="width: 50px; height: 32px;">search</button>
+            </div>
+        </div>
+    </header>
+    <main id="main_container">
+        <div class="main_div">
+            <div id="sidebar_container">
+                <nav class="main_nav_bar">
+                    <!-- <div class="line">
+                    <img src="3line.svg" style="height: 25px; width: 25px;">
+                </div>
+                <div class="line">
+                    <a href="#">User Detail form</a>
+                </div>
+                <div class="line">
+                    <a href="#">Contact</a>
+                </div>
+                <div class="line">
+                    <a href="#">About Us</a>
+                </div>
+                <div class="line">
+                    <a href="#">Services</a>
+                </div>
+                <div class="line"></div> -->
+                </nav>
+            </div>
+            <div id="content_container">
+                <form action="">
+                    <div class="names">
+                        <label for="firstname" style="font-size: 20px;">FirstName: </label>
+                        <input type="text" id="name" style="height: 25px; width: 200px;margin: 0px 40px 0px 15px ;">
+                        <br>
+                        <label for="lastname" style="font-size: 20px;">LastName: </label>
+                        <input type="text" id="lastname" style="height: 25px; width: 200px;margin: 0px 40px 0px 15px ;">
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="age">
+                        <label for="age" style="font-size: 20px;">Age: </label>
+                        <input type="number" id="age" style="height: 25px; width: 200px;margin: 20px 40px 10px 15px ;">
+                        <br>
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="gender">
+                        <label for="gender" style="font-size: 20px;">gender: </label>
+                        <label for="male" style="font-size: 20px;">Male: </label>
+                        <input type="radio" name="gender" id="male" value="Male">
+                        <label for="female" style="font-size: 20px;">Female: </label>
+                        <input type="radio" name="gender" id="female" value="Female">
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="patient_id">
+                        <label for="patientId" style="font-size: 20px;">Patient Id: </label>
+                        <input type="number" id="patientId"
+                            style="height: 25px; width: 200px;margin: 0px 40px 0px 15px ;">
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="contact">
+                        <Label for="emergency_number" style="font-size: 20px;">Emergency Number: </Label>
+                        <input type="number" id="emergency_number"
+                            style="height: 25px; width: 200px;margin: 0px 40px 0px 15px ;">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+
+</html>
+
+* {
+margin: 0px;
+padding: 0px;
+overflow-x: auto;
+}
+#header_container {
+background: rgb(210, 218, 218);
+display: flex;
+justify-content: start;
+width: 100%;
+}
+.header_nav_bar {
+display: flex;
+justify-content: space-around;
+width: 50%;
+}
+a {
+text-decoration: none;
+color: black;
+font-size: larger;
+}
+#search_container {
+
+}
+/* -------------------MAIN SECTION CSSS---------------------------------------- */
+/* #sidebar_container {
+display: flex;
+flex-direction: column;
+height: 100%;
+width: 100%;
+} */
+/* .line {
+padding: 20px 0px;
+text-align: center;
+width: 100%;
+height: 100%;
+border-bottom: 1px solid;
+}
+.line:hover {
+padding: 20px 0px;
+text-align: center;
+width: 100%;
+background: rgb(205, 218, 235);
+height: 100%;
+border-bottom: 1px solid;
+} */
+.main_nav_bar {
+height: 60%;
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+/* background-color: lightgreen; */
+}
+#main_container {
+position: absolute;
+top: 8%;
+left: 16%;
+height: 90vh;
+width: 174.2vh;
+}
+#content_container {
+position: absolute;
+left: 140px;
+top: 70px;
+height: 450px;
+width: 900px;
+background-color:rgb(208, 229, 233);
+padding: 20px;
+}
+.names {
+display: flex;
+}
