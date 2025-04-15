@@ -22,9 +22,17 @@ def fill_details():
         # return redirect(url_for('login'))
         return "invalid credentials."
 
-@app.route('/show_details')
+@app.route('/family_login', methods = ["POST","GET"])
+def family_login():
+    return render_template('family_member_login.html')
+
+@app.route('/show_details', methods = ["POST"])
 def show_details():
-    return render_template('Familly_page.html')
+    phone_number = request.form.get('phone_number').strip()
+    if phone_number == "7201099243":
+        return render_template('Familly_page.html')
+    else: 
+        return "Invalid Number Plz Check"
 
 if __name__ == '__main__':
     app.run(debug=True)
