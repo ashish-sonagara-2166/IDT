@@ -73,8 +73,8 @@ a {
 #first_section {
     margin-top: 100px;
     margin-left: 115px;
-    height: 60%;
-    width: 65%;
+    height: 382px;
+    width: 988px;
     background-color: rgb(208, 229, 233);
     padding: 20px;
 }
@@ -137,8 +137,8 @@ border-bottom: 1px solid;
 }
 
 /* FOOTER SECTION CSS */
-#footer_container {
+/* #footer_container {
     background-color: rgb(226, 225, 225);
     height: 200px;
     width: 100%;
-}
+} */

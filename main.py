@@ -1,4 +1,7 @@
 from flask import Flask,render_template,request,flash, redirect,url_for
+from database import Patient, engine
+from sqlalchemy.orm import session
+
 app = Flask(__name__)
 app.secret_key = "hello"
 
@@ -32,7 +35,27 @@ def show_details():
     if phone_number == "7201099243":
         return render_template('Familly_page.html')
     else: 
-        return "Invalid Number Plz Check"
+        return "Invalid Number Plz Check" 
+
+@app.route('/submit_patient', methods= ["POST", "GET"])
+def submit_patient():
+    patient_data  = {
+            "firstname" : request.form.get('firstname'),
+            "lastname" : request.form.get('lastname'),
+            "age" : request.form.get('age'),
+            "gender" : request.form.get('gender'),
+            "patientId" : request.form.get('patientId'),
+            "emergency_number" : request.form.get('emergency_number'),
+            "date_n_time" : request.form.get('date_n_time'),
+            "hospital_name" : request.form.get('hospital_name'),
+            "ward_name" : request.form.get('ward_name'),
+            "bed_number" : request.form.get('bed_number'),
+            "condition" : request.form.get('condition'),
+            "funds" : request.form.get('funds'),
+            "Urgency" : request.form.get('Urgency'),
+            "Initial_info" : request.form.get('Initial_info')
+        }
+    submit_patient = Patient(patient_data)
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -76,6 +76,20 @@
             border-top: 1px solid;
             border-left: 1px solid;
         }
+        #login_button {
+            height: 32px;
+            width: 85px;
+            margin-left: 100px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        #login_button:hover {
+            height: 34px;
+            width: 85px;
+            margin-left: 100px;
+            background-color: rgb(195, 214, 224);
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -147,11 +161,81 @@
                 <div id="section_2">Section 2</div>
                 <div id="section_3">Section 3</div>
             </div>
-            <div id="third_section">
-                <form action="">
-                    <label for="funds" style="font-size: 20px;">Estimated Funds Required :  </label>
-                    <input type="number" id="funds" name="funds"
+            <form action="/submit_patient" method="post">
+                <div id="first_section">
+                    <div class="names">
+                        <label for="firstname" style="font-size: 20px;">FirstName: </label>
+                        <input type="text" id="name" name="firstname" style="height: 25px; width: 200px;margin: 0px 40px 0px 15px ;">
+                        <br>
+                        <label for="lastname" style="font-size: 20px;">LastName: </label>
+                        <input type="text" id="lastname" name="lastname" style="height: 25px; width: 200px;margin: 0px 40px 0px 15px ;">
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="age">
+                        <label for="age" style="font-size: 20px;">Age: </label>
+                        <input type="number" id="age" name="age" style="height: 25px; width: 200px;margin: 20px 40px 10px 15px ;">
+                        <br>
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="gender">
+                        <section>
+                            <label for="gender" style="font-size: 20px;">gender: </label>
+                        </section>
+                        <section>
+                            <label for="male" style="font-size: 20px;">Male: </label>
+                            <input type="radio" name="gender" id="male" value="Male" style="height: 16px; width: 16px;">
+                        </section>
+                        <section>
+                            <label for="female" style="font-size: 20px;">Female: </label>
+                            <input type="radio" name="gender" id="female" value="Female" style="height: 16px; width: 16px;">
+                        </section>
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="patient_id">
+                        <label for="patientId" style="font-size: 20px;">Patient Id: </label>
+                        <input type="number" id="patientId" name="patientId" style="height: 25px; width: 200px;margin: 0px 40px 0px 15px ;">
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="contact">
+                        <Label for="emergency_number" style="font-size: 20px;">Emergency Number: </Label>
+                        <input type="number" id="emergency_number" name="emergency_number" style="height: 25px; width: 200px;margin: 0px 40px 0px 15px ;">
+                    </div>
+                </div>
+                <div id="second_section">
+                    <label for="date_n_time" style="font-size: 20px;">Date and Time : </label>
+                    <input type="datetime-local" id="date_n_time" name="date_n_time"
                         style="height: 25px; width: 200px;margin: 0px 40px 20px 15px ;">
+                    <br>
+                    <hr>
+                    <label for="hospital_name" style="font-size: 20px;">Hospital Name : </label>
+                    <input type="text" id="hospital_name" name="hospital_name"
+                        style="height: 25px; width: 200px;margin: 20px 40px 20px 15px ;">
+                    <br>
+                    <hr>
+                    <label for="ward_name" style="font-size: 20px;">Ward/Block Name : </label>
+                    <input type="text" id="ward_name" name="ward_name" style="height: 25px; width: 200px;margin: 20px 40px 20px 15px ;">
+                    <br>
+                    <hr>
+                    <label for="bed_num" style="font-size: 20px;">Bed Number : </label>
+                    <input type="number" id="bed_num" name="bed_number"
+                                    style="height: 25px; width: 200px;margin: 20px 40px 20px 15px ;">
+                    <br>
+                    <hr>
+                    <label for="condition" style="font-size: 20px;">Current Condition : </label>
+                    <select name="condition" id="condition"
+                        style="height: 35px;width: 90px; font-size: 15px;border-radius: 15px;padding: 2PX;margin: 20px 0px 0px 0px;">
+                        <option value="critical">Critical</option>
+                        <option value="stable">Stable</option>
+                        <option value="serious">Serious</option>
+                    </select>
+                </div>
+                <div id="third_section">
+                    <label for="funds" style="font-size: 20px;">Estimated Funds Required : </label>
+                    <input type="number" id="funds" name="funds" style="height: 25px; width: 200px;margin: 0px 40px 20px 15px ;">
                     <br>
                     <hr>
                     <label for="urgency" style="font-size: 20px;">Urgency Level : </label>
@@ -163,91 +247,22 @@
                     </select>
                     <br>
                     <hr>
-                    <label for="initial_info" style="font-size: 20px;">Initial Diagnosis : </label>
-                    <input type="textarea" id="initial_info" name="Initial_info"
-                        style="height: 75px; width: 300px;margin: 20px 40px 20px 15px ;">
-                </form>
-            </div>
-            <div id="second_section">
-                <form action="">
-                    <label for="date_n_time" style="font-size: 20px;">Date and Time : </label>
-                    <input type="datetime-local" id="date_n_time" name="date_n_time" style="height: 25px; width: 200px;margin: 0px 40px 20px 15px ;"> 
-                    <br><hr>
-                    <label for="hospital_name" style="font-size: 20px;">Hospital Name : </label>
-                    <input type="text" id="hospital_name" name="hospital_name" style="height: 25px; width: 200px;margin: 20px 40px 20px 15px ;">
-                    <br>
-                    <hr>
-                    <label for="ward_name" style="font-size: 20px;">Ward/Block Name : </label>
-                    <input type="text" id="ward_name" name="ward_name" style="height: 25px; width: 200px;margin: 20px 40px 20px 15px ;">
-                    <br>
-                    <hr>
-                    <label for="bed_num" style="font-size: 20px;">Bed Number : </label>
-                    <input type="number" id="bed_num" name="bed_number" style="height: 25px; width: 200px;margin: 20px 40px 20px 15px ;">
-                    <br>
-                    <hr>
-                    <label for="condition" style="font-size: 20px;">Current Condition : </label>
-                    <select name="condition" id="condition"
-                        style="height: 35px;width: 90px; font-size: 15px;border-radius: 15px;padding: 2PX;margin: 20px 0px 0px 0px;">
-                        <option value="critical">Critical</option>
-                        <option value="stable">Stable</option>
-                        <option value="serious">Serious</option>
-                    </select>
-                </form>
-            </div>
-            <div id="first_section">
-                <form action="">
-                    <div class="names">
-                        <label for="firstname" style="font-size: 20px;">FirstName: </label>
-                        <input type="text" id="name" style="height: 25px; width: 200px;margin: 0px 40px 0px 15px ;">
-                        <br>
-                        <label for="lastname" style="font-size: 20px;">LastName: </label>
-                        <input type="text" id="lastname" style="height: 25px; width: 200px;margin: 0px 40px 0px 15px ;">
+                    <div style="display: flex;">
+                        <label for="initial_info" style="font-size: 20px;margin: 40px 0px 0px 0px;">Initial Diagnosis : </label>
+                        <textarea id="initial_info" name="Initial_info"
+                            style="height: 75px; width: 300px; margin: 20px 40px 20px 15px; padding: 10px;"></textarea>
                     </div>
-                    <br>
-                    <hr>
-                    <div class="age">
-                        <label for="age" style="font-size: 20px;">Age: </label>
-                        <input type="number" id="age" style="height: 25px; width: 200px;margin: 20px 40px 10px 15px ;">
-                        <br>
-                    </div>
-                    <br>
-                    <hr>
-                    <div class="gender">
-                        <section>
-                            <label for="gender" style="font-size: 20px;">gender: </label>
-                        </section>
-                        <section>
-                            <label for="male" style="font-size: 20px;">Male: </label>
-                            <input type="radio" name="gender" id="male" value="Male" style="height: 16px; width: 16px;">  
-                        </section>
-                        <section>
-                            <label for="female" style="font-size: 20px;">Female: </label>
-                            <input type="radio" name="gender" id="female" value="Female" style="height: 16px; width: 16px;">
-                        </section>
-                    </div>
-                    <br>
-                    <hr>
-                    <div class="patient_id">
-                        <label for="patientId" style="font-size: 20px;">Patient Id: </label>
-                        <input type="number" id="patientId"
-                            style="height: 25px; width: 200px;margin: 0px 40px 0px 15px ;">
-                    </div>
-                    <br>
-                    <hr>
-                    <div class="contact">
-                        <Label for="emergency_number" style="font-size: 20px;">Emergency Number: </Label>
-                        <input type="number" id="emergency_number"
-                            style="height: 25px; width: 200px;margin: 0px 40px 0px 15px ;">
-                    </div>
-                </form>
-            </div>
+                    <br><br><br>
+                    <button type="submit" id="login_button">Submit Form</button>
+                </div>
+            </form>
         </div>
     </main>
-    <footer>
+    <!-- <footer>
         <div id="footer_container">
             <a href=""></a>
         </div>
-    </footer>
+    </footer> -->
 </body>
 <script>
     const section1 = document.getElementById("section_1");
