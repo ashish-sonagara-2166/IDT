@@ -147,7 +147,7 @@
                     <a href="#">Dashboard</a>
                 </div>
                 <div class="hr_line">
-                    <a href="login_page.html">Patient Detail form</a>
+                    <a href="/login">Patient Detail form</a>
                 </div>
                 <div class="hr_line">
                     <a href="/family_login">Patient Info Access Portal </a>
@@ -161,27 +161,27 @@
                 <div id="section_2">Section 2</div>
                 <div id="section_3">Section 3</div>
             </div>
-            <form action="/submit_patient" method="post">
+            <form action="/submit_patient" method="POST">
                 <div id="first_section">
                     <div class="names">
                         <label for="firstname" style="font-size: 20px;">FirstName: </label>
-                        <input type="text" id="name" name="firstname" style="height: 25px; width: 200px;margin: 0px 40px 0px 15px ;">
+                        <input type="text" id="name" name="firstname" style="height: 25px; width: 200px;margin: 0px 40px 0px 15px ;padding: 0px 10px;" required placeholder="enter the firstname">
                         <br>
                         <label for="lastname" style="font-size: 20px;">LastName: </label>
-                        <input type="text" id="lastname" name="lastname" style="height: 25px; width: 200px;margin: 0px 40px 0px 15px ;">
+                        <input type="text" id="lastname" name="lastname" style="height: 25px; width: 200px;margin: 0px 40px 0px 15px ;padding: 0px 10px;" required placeholder="enter the lastname">
                     </div>
                     <br>
                     <hr>
                     <div class="age">
                         <label for="age" style="font-size: 20px;">Age: </label>
-                        <input type="number" id="age" name="age" style="height: 25px; width: 200px;margin: 20px 40px 10px 15px ;">
+                        <input type="number" id="age" name="age" style="height: 25px; width: 200px;margin: 20px 40px 10px 15px ;padding: 0px 10px;" required placeholder="enter the assumed age">
                         <br>
                     </div>
                     <br>
                     <hr>
                     <div class="gender">
                         <section>
-                            <label for="gender" style="font-size: 20px;">gender: </label>
+                            <label for="gender" style="font-size: 20px;">Gender: </label>
                         </section>
                         <section>
                             <label for="male" style="font-size: 20px;">Male: </label>
@@ -196,13 +196,13 @@
                     <hr>
                     <div class="patient_id">
                         <label for="patientId" style="font-size: 20px;">Patient Id: </label>
-                        <input type="number" id="patientId" name="patientId" style="height: 25px; width: 200px;margin: 0px 40px 0px 15px ;">
+                        <input type="text" id="patientId" name="patientId" style="height: 25px; width: 200px;margin: 0px 40px 0px 15px ;padding: 0px 10px;" required placeholder="just add hyphen">
                     </div>
                     <br>
                     <hr>
                     <div class="contact">
                         <Label for="emergency_number" style="font-size: 20px;">Emergency Number: </Label>
-                        <input type="number" id="emergency_number" name="emergency_number" style="height: 25px; width: 200px;margin: 0px 40px 0px 15px ;">
+                        <input type="number" id="emergency_number" name="emergency_number" style="height: 25px; width: 200px;margin: 0px 40px 0px 15px ;padding: 0px 10px;" required placeholder="enter the number ">
                     </div>
                 </div>
                 <div id="second_section">
@@ -213,20 +213,21 @@
                     <hr>
                     <label for="hospital_name" style="font-size: 20px;">Hospital Name : </label>
                     <input type="text" id="hospital_name" name="hospital_name"
-                        style="height: 25px; width: 200px;margin: 20px 40px 20px 15px ;">
+                        style="height: 25px; width: 200px;margin: 20px 40px 20px 15px ;padding: 0px 10px;" required placeholder="enter the hospital name">
                     <br>
                     <hr>
                     <label for="ward_name" style="font-size: 20px;">Ward/Block Name : </label>
-                    <input type="text" id="ward_name" name="ward_name" style="height: 25px; width: 200px;margin: 20px 40px 20px 15px ;">
+                    <input type="text" id="ward_name" name="ward_name" 
+                        style="height: 25px; width: 200px;margin: 20px 40px 20px 15px ;padding: 0px 10px;" required placeholder="enter the ward name/number">
                     <br>
                     <hr>
                     <label for="bed_num" style="font-size: 20px;">Bed Number : </label>
                     <input type="number" id="bed_num" name="bed_number"
-                                    style="height: 25px; width: 200px;margin: 20px 40px 20px 15px ;">
+                        style="height: 25px; width: 200px;margin: 20px 40px 20px 15px ;padding: 0px 10px;" required placeholder="enter the bed number">
                     <br>
                     <hr>
                     <label for="condition" style="font-size: 20px;">Current Condition : </label>
-                    <select name="condition" id="condition"
+                    <select name="condition" id="condition" required
                         style="height: 35px;width: 90px; font-size: 15px;border-radius: 15px;padding: 2PX;margin: 20px 0px 0px 0px;">
                         <option value="critical">Critical</option>
                         <option value="stable">Stable</option>
@@ -235,11 +236,11 @@
                 </div>
                 <div id="third_section">
                     <label for="funds" style="font-size: 20px;">Estimated Funds Required : </label>
-                    <input type="number" id="funds" name="funds" style="height: 25px; width: 200px;margin: 0px 40px 20px 15px ;">
+                    <input type="number" id="funds" name="funds" style="height: 25px; width: 200px;margin: 0px 40px 20px 15px ;padding: 0px 10px;" required placeholder="enter the estimated funds required">
                     <br>
                     <hr>
                     <label for="urgency" style="font-size: 20px;">Urgency Level : </label>
-                    <select name="Urgency" id="urgency"
+                    <select name="Urgency" id="urgency" required
                         style="height: 35px;width: 100px; font-size: 15px;border-radius: 15px;padding: 2PX;margin: 20px 0px 20px 0px;">
                         <option value="immediate">Immediate</option>
                         <option value="Within_24_hours">Within 24 hours</option>
@@ -250,7 +251,7 @@
                     <div style="display: flex;">
                         <label for="initial_info" style="font-size: 20px;margin: 40px 0px 0px 0px;">Initial Diagnosis : </label>
                         <textarea id="initial_info" name="Initial_info"
-                            style="height: 75px; width: 300px; margin: 20px 40px 20px 15px; padding: 10px;"></textarea>
+                            style="height: 75px; width: 300px; margin: 20px 40px 20px 15px; padding: 10px;padding: 0px 10px;" required "></textarea>
                     </div>
                     <br><br><br>
                     <button type="submit" id="login_button">Submit Form</button>
@@ -277,7 +278,7 @@
    
     const section2 = document.getElementById("section_2");
     section2.addEventListener("click", () => {
-           console.log("section 2 clicked");
+        //    console.log("section 2 clicked");
            document.getElementById("first_section").style.display = "none";
            document.getElementById("second_section").style.display = "block";
            section2.style.backgroundColor = "rgb(208, 229, 233)";
@@ -292,6 +293,17 @@
         section3.style.backgroundColor = "rgb(208, 229, 233)";
         section2.style.backgroundColor = "rgb(125, 167, 220)";
         section1.style.backgroundColor = "rgb(125, 167, 220)";
+    })
+
+    const submit = document.getElementById("login_button");
+    submit.addEventListener("click", (event) => {
+        console.log("checked");
+        const emergency_number = document.getElementById("emergency_number");
+        length = emergency_number.value.length;
+        if (length != 10) {
+            event.preventDefault()
+            alert("enter only 10 digits")
+        }
     })
 </script>
 </html>

@@ -1,6 +1,5 @@
 from flask import Flask,render_template,request,flash, redirect,url_for
-from database import Patient, engine
-from sqlalchemy.orm import session
+from database import Patient, engine, Session
 
 app = Flask(__name__)
 app.secret_key = "hello"
@@ -39,23 +38,29 @@ def show_details():
 
 @app.route('/submit_patient', methods= ["POST", "GET"])
 def submit_patient():
-    patient_data  = {
+    if request.method == "POST":
+        patient_data  = {
             "firstname" : request.form.get('firstname'),
             "lastname" : request.form.get('lastname'),
             "age" : request.form.get('age'),
             "gender" : request.form.get('gender'),
-            "patientId" : request.form.get('patientId'),
-            "emergency_number" : request.form.get('emergency_number'),
-            "date_n_time" : request.form.get('date_n_time'),
-            "hospital_name" : request.form.get('hospital_name'),
-            "ward_name" : request.form.get('ward_name'),
-            "bed_number" : request.form.get('bed_number'),
-            "condition" : request.form.get('condition'),
-            "funds" : request.form.get('funds'),
+            # "patientId" : request.form.get('patientId'),
+            "emergencyNumber" : request.form.get('emergency_number'),
+            "dateAndTime" : request.form.get('date_n_time'),
+            "hospitalName" : request.form.get('hospital_name'),
+            "wardName" : request.form.get('ward_name'),
+            "bedNumber" : request.form.get('bed_number'),
+            "currentCondition" : request.form.get('condition'),
+            "fundRequired" : request.form.get('funds'),
             "Urgency" : request.form.get('Urgency'),
-            "Initial_info" : request.form.get('Initial_info')
+            "intialDiagnosis" : request.form.get('Initial_info')
         }
-    submit_patient = Patient(patient_data)
+        # USING ** THE FUNCTION TO UNPACK THE DICT AND PASS IT TO THE CLASS
+        submit_patient = Patient(**patient_data)
+        session = Session()
+        session.add(submit_patient)
+        session.commit()
+        return "Patient and its details added SUCCESSFULLY"
 
 if __name__ == '__main__':
     app.run(debug=True)
