@@ -1,4 +1,31 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block title%}Show Pateint Detail{% endblock %}
+
+{% block inner_style %}
+    <style>
+        #content_container {
+            margin-top: 100px;
+            margin-left: 115px;
+            height: 60%;
+            width: 65%;
+            background-color: rgb(208, 229, 233);
+            padding: 20px;
+        }
+        .sidebar_container {
+            height: 520px;
+        }
+    </style>
+{% endblock %}
+{% block main %}
+    <div id="content_container">
+
+    </div>
+{% endblock %}
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,11 +38,11 @@
     <header>
         <div id="header_container">
             <a href="">
-                <img src="hospitallogo.png" alt="our hospital logo" style="height: 75px; width: 75px;margin-top: 5px;">
+                <img src="{{url_for('static',filename='hospitallogo.png')}}" alt="our hospital logo" style="height: 75px; width: 75px;margin-top: 5px;">
             </a>
             <nav class="header_nav_bar">
                 <div class="line">
-                    <a href="index.html">Home</a>
+                    <a href="/">Home</a>
                 </div>
                 <div class="line">
                     <a href="#">Contact</a>
@@ -43,7 +70,7 @@
                     <option value="gujarati">Gujarati</option>
                 </select>
             </div>
-            <!-- <h1 style="font-size: 30px;margin-top: 10px;margin-right: 20px;">Integrated Hospital Navigation and Patient Info Portal</h1> -->
+           
             <div id="search_container">
                 <input type="search" id="search" placeholder="Search..."
                     style="width: 300px; height: 35px;border-radius: 10px;padding-left: 10px;">
@@ -55,7 +82,7 @@
         <div class="main_div">
             <div class="sidebar_container">
                     <div class="hr_line">
-                        <img src="3line.svg" style="height: 35px; width: 35px;">
+                        <img src="{{url_for('static',filename='3line.svg')}}" style="height: 35px; width: 35px;">
                     </div>
                     <div class="hr_line">
                         <a href="/login">Patient Detail form</a>
@@ -77,4 +104,4 @@
     </main>
     <footer></footer>
 </body>
-</html>
+</html> -->

@@ -1,17 +1,16 @@
-from sqlalchemy import Table, Column ,Integer , String, create_engine ,DateTime
+from sqlalchemy import Table, Column ,Integer , String, create_engine ,DateTime , UniqueConstraint
 from sqlalchemy.orm import Session , relationship , declarative_base , sessionmaker
 
 engine = create_engine('sqlite:///hospital_database.db', echo=True)
 base = declarative_base()
-
 class Patient(base):
     __tablename__ = "patient"
-    patientId = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True)
     firstname = Column(String)
     lastname= Column(String)
     age = Column(Integer)
     gender = Column(String)
-    emergencyNumber = Column(Integer)
+    emergencyNumber = Column(Integer, unique=True)
     dateAndTime = Column(String, nullable=False)
     hospitalName = Column(String, nullable=False)
     wardName = Column(String, nullable=False)

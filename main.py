@@ -31,7 +31,9 @@ def family_login():
 @app.route('/show_details', methods = ["POST"])
 def show_details():
     phone_number = request.form.get('phone_number').strip()
-    if phone_number == "7201099243":
+    session = Session()
+    data = session.query(Patient).filter_by(emergencyNumber = phone_number).first()
+    if data:
         return render_template('Familly_page.html')
     else: 
         return "Invalid Number Plz Check" 
