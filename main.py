@@ -46,7 +46,7 @@ def submit_patient():
             "lastname" : request.form.get('lastname'),
             "age" : request.form.get('age'),
             "gender" : request.form.get('gender'),
-            # "patientId" : request.form.get('patientId'),
+            "hospitalLink" : request.form.get('hospital_link'),
             "emergencyNumber" : request.form.get('emergency_number'),
             "dateAndTime" : request.form.get('date_n_time'),
             "hospitalName" : request.form.get('hospital_name'),

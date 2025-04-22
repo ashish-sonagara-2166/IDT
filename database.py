@@ -19,6 +19,7 @@ class Patient(base):
     fundRequired = Column(Integer,nullable=False)
     Urgency = Column(String, nullable=False)
     intialDiagnosis = Column(String, nullable=False)
+    hospitalLink = Column(String)
 
 base.metadata.create_all(engine)
 Session = sessionmaker(bind = engine)

@@ -5,7 +5,7 @@
 {% block inner_style %}
     <style>
         #content_container {
-            margin-top: 80px;
+            margin-top: 50px;
             margin-left: 115px;
             height: 60%;
             width: 40%;
@@ -38,6 +38,10 @@
         <h3>Approx Funds Needed : {{pateint_data.fundRequired}}</h3>
         <h3>Urgency : {{pateint_data.Urgency}}</h3>
         <h3>Intial Diagnosis : {{pateint_data.intialDiagnosis}}</h3>
+        <h3>Hospital Navigation Link : </h3>
+        <Div style="width: 50px; height: 30px; background-color: rgb(255, 255, 255); border: 1px solid;margin: 10px; padding: 4px 4px 0px 8px;">
+            <a href="{{pateint_data.hospitalLink}}" target="_blank"> Link </a>
+        </Div>
     </div>
 {% endblock %}
 
