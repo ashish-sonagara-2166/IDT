@@ -34,7 +34,7 @@ def show_details():
     session = Session()
     data = session.query(Patient).filter_by(emergencyNumber = phone_number).first()
     if data:
-        return render_template('Familly_page.html')
+        return render_template('Familly_page.html', pateint_data = data)
     else: 
         return "Invalid Number Plz Check" 
 

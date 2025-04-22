@@ -5,21 +5,39 @@
 {% block inner_style %}
     <style>
         #content_container {
-            margin-top: 100px;
+            margin-top: 80px;
             margin-left: 115px;
             height: 60%;
-            width: 65%;
+            width: 40%;
             background-color: rgb(208, 229, 233);
-            padding: 20px;
+            padding: 20px 50px;
+            border-radius: 20px 0px;
         }
         .sidebar_container {
             height: 520px;
+        }
+        h3 {
+            font-size: 22px;
+            font-weight: 200;
+            padding-top: 8px;
         }
     </style>
 {% endblock %}
 {% block main %}
     <div id="content_container">
-
+        <h3>Pateint Name : {{pateint_data.firstname}} {{pateint_data.lastname}}</h3>
+        <h3>Age : {{pateint_data.age}}</h3>
+        <h3>Pateint ID : {{pateint_data.id}}</h3>
+        <h3>Gender : {{pateint_data.gender}}</h3>
+        <h3>Emergency Number : {{pateint_data.emergencyNumber}}</h3>
+        <h3>Date & Time : {{pateint_data.dateAndTime}}</h3>
+        <h3>Hospital Name : {{pateint_data.hospitalName}}</h3>
+        <h3>Ward Name/Number : {{pateint_data.wardName}}</h3>
+        <h3>Bed Number : {{pateint_data.bedNumber}}</h3>
+        <h3>Current Condition : {{pateint_data.currentCondition}}</h3>
+        <h3>Approx Funds Needed : {{pateint_data.fundRequired}}</h3>
+        <h3>Urgency : {{pateint_data.Urgency}}</h3>
+        <h3>Intial Diagnosis : {{pateint_data.intialDiagnosis}}</h3>
     </div>
 {% endblock %}
 
